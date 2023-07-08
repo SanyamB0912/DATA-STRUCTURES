@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singly Linked List</title>
+    <style>
+    .heading{
+      text-align: center;
+    }
+    img {
+      height: 195px;
+      width: 429px;
+    }
+    body{
+      background-color: darkgray;
+    }
+    .menuBar{
+        background-color: rgba(0, 0, 0, 0.378);
+        overflow: hidden;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0;
+        left: 0; /* Position the navbar at the top of the page */
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 18px;
+        padding-bottom: 10px ;
+        color:white;
+    }
+    .menuBar a{
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+    .title{
+        padding: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+    }
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .hover-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 50px;
+        bottom: 0;
+        left: 0;
+        opacity: .2;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    </style>
+</head>
+<body>
+  <div class="menuBar">
+    <a class = "title">Data structure's project</a>
+    <a class="hover-underline-animation" href="index.html">Home</a>
+    <a class="hover-underline-animation" href="array_and_tree.html">Array</a>
+    <a class="hover-underline-animation" href = "queue.html">Queue</a>
+    <a class="hover-underline-animation" href = "graph.html">Graph</a>
+    <a class="hover-underline-animation" href="stack.html">Stack</a>
+    <a class="hover-underline-animation" href = "linked list.html">Linked List</a>
+    <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+    <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+    <a class="hover-underline-animation" href = "about.html">About</a>
+</div><br><br><br><br>
+    <h1 class="heading">Singly Linked List</h1>
+    <p>A singly linked list is a type of linked list where each node contains a value and a reference (or link) to the next node in the list.</p>
+    <p>In a singly linked list, each node holds a piece of data and a link to the next node. The first node is called the <b>head</b>, and the last node typically has a <b>link pointing to null, indicating the end of the list.</b></p>
+    <h2>Example</h2>
+    <p>Here's an example of a singly linked list representation:</p>
+    <img align="center" src="Singlelinkedlist.png" alt=""><br><br>
+
+    <h3>Advantages of Singly Linked Lists:</h3>
+    <p>
+        <b>Dynamic memory allocation:</b> Singly linked lists allow for dynamic memory allocation, meaning that the size of the list can change at runtime as elements are added or removed.<br>
+        <b>Cache friendliness:</b> Singly linked lists can be cache-friendly as nodes can be stored in separate cache lines, reducing cache misses and improving performance.<br>
+        <b>Space-efficient:</b> Singly linked lists are space-efficient, as they only need to store a reference to the next node in each element, rather than a large block of contiguous memory.<br>
+    </p>
+</body>
+</html>

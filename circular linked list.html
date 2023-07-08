@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Linked List</title>
+    <style>
+        .heading{
+          text-align: center;
+        }
+        img {
+          height: 195px;
+          width: 429px;
+        }
+        body{
+          background-color: darkgray;
+        }
+        .menuBar{
+        background-color: rgba(0, 0, 0, 0.378);
+        overflow: hidden;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0;
+        left: 0; /* Position the navbar at the top of the page */
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 18px;
+        padding-bottom: 10px ;
+        color:white;
+    }
+    .menuBar a{
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+    .title{
+        padding: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+    }
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .hover-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 50px;
+        bottom: 0;
+        left: 0;
+        opacity: .2;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+        </style>
+</head>
+<body>
+  <div class="menuBar">
+    <a class = "title">Data structure's project</a>
+    <a class="hover-underline-animation" href="index.html">Home</a>
+    <a class="hover-underline-animation" href="array_and_tree.html">Array</a>
+    <a class="hover-underline-animation" href = "queue.html">Queue</a>
+    <a class="hover-underline-animation" href = "graph.html">Graph</a>
+    <a class="hover-underline-animation" href="stack.html">Stack</a>
+    <a class="hover-underline-animation" href = "linked list.html">Linked List</a>
+    <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+    <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+    <a class="hover-underline-animation" href = "about.html">About</a>
+</div><br><br><br><br>
+    <h1>Circular Linked List</h1>
+    <p>A circular linked list is a variation of a linked list where the last node points back to the first node, forming a circular structure.</p>
+    <p>In a circular linked list, each node contains a value and a link to the next node. Unlike a singly linked list, the last node's link points back to the first node, creating a loop. This loop allows for traversal from any node to any other node in the list.</p>
+    <p>There are two types of circular linked lists:</p>
+    <ol>
+        <li><strong>Singly Circular Linked List:</strong> Each node has a link pointing only to the next node in the sequence.</li>
+        <li><strong>Doubly Circular Linked List:</strong> Each node has a link pointing both to the next node and the previous node in the sequence, forming a doubly linked circular list.</li>
+    </ol>
+    <h2>
+        Types of circular linked list
+    </h2>
+    <p>
+    <ul>
+        <li><a href="circularsinglyll.html">Circular Singly Linked List</a></li>
+        <li><a href="circulardoublell.html">Circular Doubly Linked List</a></li>
+    </ul>
+    </p>
+    <h2>Example</h2>
+    <p>Here's an example of a singly circular linked list representation:</p>
+    <img align="center" src="CircularLinkeList.png" alt=""><br><br>
+    <p>Circular linked lists are useful in scenarios where the data needs to be accessed in a circular manner or when we want to efficiently iterate through all the elements of the list.</p>
+    <h3>Advantages of Singly Linked Lists:</h3>
+    <p>In a singly linked list, for accessing any node of the linked list, we start traversing from the first node. If we are at any node in the middle of the list, then it is not possible to access nodes that precede the given node. </p>
+    <p>This problem can be solved by slightly altering the structure of a singly linked list. In a singly linked list, the next part (pointer to the next node) of the last node is NULL.</p>
+    
+</body>
+</html>

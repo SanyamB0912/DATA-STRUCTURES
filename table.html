@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack VS Queue</title>
+</head>
+<body>
+    <style>
+        table,th{
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        th,tr{
+            padding-top: 30px;
+            padding-bottom: 20px;
+            border: 1.25px solid black;
+            font-weight: normal;
+        }
+        .main{
+            background-color: grey;
+        }
+        .sub-main{
+            background-color: beige;
+        }
+        .sub1{
+            background-color: aliceblue;
+        }
+        .menuBar{
+                background-color: rgba(0, 0, 0, 0.378);
+                overflow: hidden;
+                position: fixed; /* Set the navbar to fixed position */
+                top: 0;
+                left: 0; /* Position the navbar at the top of the page */
+                width: 100%;
+                padding-left: 10px;
+                padding-top: 18px;
+                padding-bottom: 10px ;
+                color:white;
+        }
+        .menuBar a{
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 25px;
+        }
+        .title{
+            padding: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #0087ca;
+        }
+
+            
+        .hover-underline-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+            transform-origin: right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        .hover-underline-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .hover-animation {
+            display: inline-block;
+            position: relative;
+            color: #0087ca;
+        }
+
+            
+        .hover-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 50px;
+            bottom: 0;
+            left: 0;
+            opacity: .2;
+            background-color: #0087ca;
+            transform-origin: right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        .hover-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    
+    </style>
+    <div class="menuBar">
+        <a class = "title">Data structure's project</a>
+        <a class="hover-underline-animation" href="index.html">Home</a>
+        <a class="hover-underline-animation" href="array_and_tree.html">Array and Tree</a>
+        <a class="hover-underline-animation" href = "queue.html">Queue</a>
+        <a class="hover-underline-animation" href = "graph.html">Graph</a>
+        <a class="hover-underline-animation" href="stack.html">Stack</a>
+        <a class="hover-underline-animation" href = "linked list.html">Linked List</a>
+        <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+        <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+        <a class="hover-underline-animation" href = "about.html">About</a>
+    </div>
+    <br><br><br><br><br><br>
+    <div style="align-items: center;">
+        <table style="width: 75%; align-items: center;">
+            <tr>
+                <th colspan="3" class="main">
+                     <b><i>Stack VS Queue</i></b>
+                </th>
+            </tr>
+            <tr class="sub-main">
+                <th colspan="1" width="50%"><b><i>Stack</i></b></th>
+                <th colspan="1" width="50%"><b><i>Queue</i></b></th>
+            </tr>
+            <tr class="sub1">
+                <th colspan="1"><i>A stack is a data structure that<br> stores a collection of elements,with<br> operations to push (add) and pop <br>(remove) elements from the<b>top of <br>the stack</b>.</i></th>
+                <th colspan="1"><i>A queue is a data structure that stores a<br> collection of elements, with operations to<br> enqueue (add) elements at the back of <br>the queue, and dequeue (remove) <b>elements from<br> the front of the queue</b>.</i></th>
+            </tr>
+            <tr class="sub1">
+                <th colspan="1"><i>It's based on the <b>LIFO</b><br>principle, i.e., the element inserted at <br>the last, is the first element to come<br> out of the list.</i></th>
+                <th colspan="1"><i>It's based on the <b>FIFO</b> principle, i.e., the element<br> inserted at the first, is the first element to<br> come out of the list.</i></th>
+            </tr>
+            <tr class="sub1">
+                <th colspan="1"><i>These basically doesnot have types.</i></th>
+                <th colspan="1"><i>Queue is of three types –<br> 1. Circular Queue<br> 2. Priority queue<br> 3. double-ended queue.</i></th>
+            </tr>
+            <tr class="sub1">
+                <th colspan="1"><i>Are often used for tasks that<br> require backtracking, such as parsing<br> expressions or implementing undo<br> functionality.</i></th>
+                <th colspan="1"><i>Often used for tasks that involve<br> processing elements in a specific order, such as<br> handling requests or scheduling tasks.</i></th>
+            </tr>
+            <tr class="sub1">
+                <th colspan="1"><i><b>Insertion and deletion</b> in stacks <br>takes place only from one end of the<br> list called the<b>top</b>.</i></th>
+                <th colspan="1"><i>Insertion and deletion in queues takes place<br> from the opposite ends of the list. The <b>insertion</b> <br>takes place <b>at the rear of the list</b> and the<br> <b>deletion takes place from the front of the list</b>.</i></th>
+            </tr>
+            <tr class="sub1">
+                <th colspan="1"><i>Insert operation is called <b>push operation</b> and delete operation<br> is called as <b> pop operation</b>.</i></th>
+                <th colspan="1"><i>Insert operation is called <b>enqueue operation</b> and<br> delete operation is called as<b> dequeue operation</b>.</i></th>
+            </tr>
+            <tr class="sub1">
+                <th colspan="1"><i>It is implemented using array and linked lists.</i></th>
+                <th colspan="1"><i>It is also implemented using array and linked lists.</i></th>
+            </tr>
+            <tr class="sub1">
+                <th colspan="1"><i>Stack is used in solving problems works on recursion.</i></th>
+                <th colspan="1"><i>Queue is used in solving problems having sequential processing.</i></th>
+            </tr>
+            <tr class="sub1">
+                <th colspan="1"><i>These are often used for recursive<br> algorithms or for maintaining a<br> history of function calls.</i></th>
+                <th colspan="1"><i>These  are often used in multithreaded<br> applications, where tasks are added to a queue<br> and executed by a pool of worker threads.</i></th>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>

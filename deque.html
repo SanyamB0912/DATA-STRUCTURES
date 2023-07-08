@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Double Ended Queue</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="menuBar">
+    <a class = "title">Data structure's project</a>
+    <a class="hover-underline-animation" href="index.html">Home</a>
+    <a class="hover-underline-animation" href="array.html">Array</a>
+    <a class="hover-underline-animation" href = "queue.html">Queue</a>
+    <a class="hover-underline-animation" href="stack.html">Stack</a>
+    <a class="hover-underline-animation" href = "ll.html">Linked List</a>
+    <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+    <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+    <a class="hover-underline-animation" href = "about.html">About</a>
+</div>
+
+<br><br><br><br><br>
+  <div class="container">
+    <h1>Double Ended Queue</h1>
+    <div class="deque">
+      <div class="deque-visuals">
+        <div id="deque-front" style="color:azure;">Front</div>
+        <div id="deque-items"></div>
+        <div id="deque-rear" style="color:azure;">Rear</div>
+      </div>
+      <div class="deque-operations">
+        <input type="text" id="input-value" placeholder="Enter a value">
+        <button onclick="enqueueFront()">Enqueue Front</button>
+        <button onclick="dequeueFront()">Dequeue Front</button>
+        <button onclick="enqueueRear()">Enqueue Rear</button>
+        <button onclick="dequeueRear()">Dequeue Rear</button>
+        <button onclick="clearDeque()">Clear Deque</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>

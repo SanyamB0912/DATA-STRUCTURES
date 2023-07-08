@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c9c7c7;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color:azure;
+  }
+  
+  .deque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .deque-visuals {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid azure;
+    padding: 10px;
+    width: 300px;
+    justify-content: space-between;
+  }
+  
+  #deque-items {
+    display: flex;
+  }
+  
+  #deque-items > div {
+    border: 1px solid azure;
+    padding: 5px;
+    margin: 0 3px;
+  }
+  
+  #deque-front,
+  #deque-rear {
+    font-weight: bold;
+  }
+  
+  .deque-operations {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #input-value {
+    padding: 5px;
+  }
+  
+  button {
+    padding: 5px 10px;
+  }
+  .menuBar{
+    background-color: rgba(0, 0, 0, 0.378);
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0;
+    left: 0; /* Position the navbar at the top of the page */
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 18px;
+    padding-bottom: 10px ;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.menuBar a{
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 25px;
+}
+.title{
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+
+    
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.hover-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+
+    
+.hover-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    opacity: .2;
+    background-color: #0087ca;
+    transform-origin: right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+}

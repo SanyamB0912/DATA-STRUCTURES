@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+  <style>
+    .quiz-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .quiz-container h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 10px;
+    }
+    .submit-btn {
+      display: block;
+      margin-top: 20px;
+    }
+    .result {
+      margin-top: 20px;
+    }
+    .menuBar{
+        background-color: rgba(0, 0, 0, 0.378);
+        overflow: hidden;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0;
+        left: 0; /* Position the navbar at the top of the page */
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 18px;
+        padding-bottom: 10px ;
+        color:white;
+    }
+    .menuBar a{
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+    .title{
+        padding: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+    }
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .hover-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 50px;
+        bottom: 0;
+        left: 0;
+        opacity: .2;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+  </style>
+</head>
+<body style="background-color: antiquewhite ;">
+  <div class="menuBar">
+    <a class = "title">Data structure's project</a>
+    <a class="hover-underline-animation" href="index.html">Home</a>
+    <a class="hover-underline-animation" href="array_and_tree.html">Array and Tree</a>
+    <a class="hover-underline-animation" href = "queue.html">Queue</a>
+    <a class="hover-underline-animation" href = "graph.html">Graph</a>
+    <a class="hover-underline-animation" href="stack.html">Stack</a>
+    <a class="hover-underline-animation" href = "linked list.html">Linked List</a>
+    <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+    <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+    <a class="hover-underline-animation" href = "about.html">About</a>
+</div>
+
+  <br><br><br><br><br><br>
+  <div class="quiz-container">
+    <h2>Quiz</h2>
+    <div class="question">
+      <p>1. Process of inserting an element in stack is called?</p>
+      <input type="text" id="q1" />
+    </div>
+    <div class="question">
+      <p>2. Process of removing an element from stack is called?</p>
+      <input type="text" id="q2" />
+    </div>
+    <div class="question">
+      <p>3.In a stack, if a user tries to remove an element from an empty stack it is called?</p>
+      <input type="text" id="q3" />
+    </div>
+    <div class="question">
+      <p>4. Inserting an element to a queue is called</p>
+      <input type="text" id="q4" />
+    </div>
+    <div class="question">
+      <p>5. Queue is implemented in which manner?</p>
+      <input type="text" id="q5" />
+    </div>
+    <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+    
+    <div class="result" id="quiz-result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

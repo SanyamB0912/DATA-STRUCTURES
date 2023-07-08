@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List</title>
+    <style>
+    .heading{
+      text-align: center;
+    }
+    body{
+      background-color:rgb(91, 117, 117);
+    }
+    .menuBar{
+        background-color: rgba(0, 0, 0, 0.378);
+        overflow: hidden;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0;
+        left: 0; /* Position the navbar at the top of the page */
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 18px;
+        padding-bottom: 10px ;
+        color:white;
+    }
+    .menuBar a{
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+    .title{
+        padding: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+    }
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .hover-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 50px;
+        bottom: 0;
+        left: 0;
+        opacity: .2;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    </style>
+</head>
+<body>
+  <div class="menuBar">
+    <a class = "title">Data structure's project</a>
+    <a class="hover-underline-animation" href="index.html">Home</a>
+    <a class="hover-underline-animation" href="array_and_tree.html">Array and Tree</a>
+    <a class="hover-underline-animation" href = "queue.html">Queue</a>
+    <a class="hover-underline-animation" href = "graph.html">Graph</a>
+    <a class="hover-underline-animation" href="stack.html">Stack</a>
+    <a class="hover-underline-animation" href = "linked list.html">Linked List</a>
+    <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+    <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+    <a class="hover-underline-animation" href = "about.html">About</a>
+</div><br><br><br><br><br>
+    <h1 class="heading">Linked List</h1>
+    <p>A linked list is a linear data structure that consists of a sequence of nodes, where each node contains a value and a reference to the next node in the sequence.</p>
+    <p>In a linked list, each node holds a piece of data and a reference (or link) to the next node. The first node is called the head, and the last node typically has a reference pointing to null, indicating the end of the list.</p>
+    <p>Unlike arrays, linked lists do not require contiguous memory locations. Instead, each node can be dynamically allocated in memory, allowing the list to grow or shrink as needed.</p>
+    <p>Linked lists offer efficient insertion and deletion operations at the beginning or end of the list compared to arrays. However, accessing elements in the middle of the list can be slower because traversing the list requires following the references from one node to another.</p>
+    <h2>Types of linked list:</h2>
+    <ul>
+        <li><a href="Single linked list.html">Single Linked List</a></li>
+        <li>
+            <a href="circular linked list.html">Circular linked list</a>
+            <ul>
+                <li>Circular Singly Linked List</li>
+                <li>Circular Doubly Linked List</li>
+              </ul>
+        </li>
+    </ul>
+    
+    <p><b>Click <a href="ll.html">this</a> for a simulation of linked list</b></p>
+    <h2>Conclusion</h2>
+    <p>Linked lists are a fundamental data structure in computer science. They provide a dynamic way to store and manage collections of data. Understanding linked lists and their operations, such as insertion, deletion, and traversal, is crucial for solving various programming problems and designing efficient algorithms.</p>
+</body>
+</html>

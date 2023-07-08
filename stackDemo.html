@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <style>
+            legend{
+                text-align: center;
+            }
+            fieldset{
+                width:50%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align:center;
+            }
+            #top{
+                margin-left: 100px;
+                
+            }
+            #container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .left{
+                float:left;
+                width:20%;
+                height:100px;
+                text-align:center;
+            }
+            .right{
+                float:right;
+                width:20%;
+                height:100px;
+                text-align:center;  
+                margin-right: 100px;
+            }
+            .menuBar{
+                background-color: rgba(0, 0, 0, 0.378);
+                overflow: hidden;
+                position: fixed; /* Set the navbar to fixed position */
+                top: 0;
+                left: 0; /* Position the navbar at the top of the page */
+                width: 100%;
+                padding-left: 10px;
+                padding-top: 18px;
+                padding-bottom: 10px ;
+                color:white;
+            }
+            .menuBar a{
+                float: left;
+                color: black;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+                font-size: 25px;
+            }
+            .title{
+                padding: 20px;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 25px;
+            }
+            .hover-underline-animation {
+                display: inline-block;
+                position: relative;
+                color: #0087ca;
+            }
+
+                
+            .hover-underline-animation:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #0087ca;
+                transform-origin: right;
+                transition: transform 0.25s ease-out;
+            }
+            
+            .hover-underline-animation:hover:after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            .hover-animation {
+                display: inline-block;
+                position: relative;
+                color: #0087ca;
+            }
+
+                
+            .hover-animation:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 50px;
+                bottom: 0;
+                left: 0;
+                opacity: .2;
+                background-color: #0087ca;
+                transform-origin: right;
+                transition: transform 0.25s ease-out;
+            }
+            
+            .hover-animation:hover:after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="menuBar">
+            <a class = "title">Data structure's project</a>
+            <a class="hover-underline-animation" href="index.html">Home</a>
+            <a class="hover-underline-animation" href="array.html">Array</a>
+            <a class="hover-underline-animation" href = "queue.html">Queue</a>
+            <a class="hover-underline-animation" href="stack.html">Stack</a>
+            <a class="hover-underline-animation" href = "ll.html">Linked List</a>
+            <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+            <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+            <a class="hover-underline-animation" href = "about.html">About</a>
+        </div>
+        
+        <br><br><br><br><br>
+        <fieldset>
+            <legend>Stack</legend>
+            <div id="container">
+                <p id="stack"></p>
+            </div>    
+            
+
+        </fieldset><br><br>
+        <fieldset>
+            <legend>OPERATIONS</legend>
+            
+            Enter value to be entered:<input type="number" id="value" required><br><br>
+            <button type="submit" id="push" onclick="push()">PUSH</button>
+            <button type="submit" id="pop" onclick="pop()">POP</button>
+            
+            
+        </fieldset><br>
+        <br>
+        <div class="same">
+            <div class="left">
+        <fieldset id="top">
+           <legend>TOP OF THE STACK</legend>
+                <p id="top1"></p>
+            
+            <br>
+            
+        </fieldset></div>
+        <div class="right">
+            <fieldset>
+                <legend>SIZE OF STACK</legend>
+                <p id="size"></p>
+            </fieldset>
+        </div>
+    </div>
+        
+        <script>
+            let a=[];
+            
+            function push(){
+                a.push(document.getElementById("value").value);
+                document.getElementById("stack").innerHTML=a;
+                
+                document.getElementById("top1").innerHTML=a[a.length-1];
+                document.getElementById("size").innerHTML=a.length;
+            }
+            function pop(){
+                if (a.length!=0){
+                let p=a.pop();
+                document.getElementById("stack").innerHTML=a;  
+                if (a.length==0){
+                document.getElementById("stack").innerHTML="EMPTY STACK";
+                
+
+                
+                
+            }   document.getElementById("top1").innerHTML=a[a.length-1];
+            document.getElementById("size").innerHTML=a.length;
+                alert(p+" is popped");
+            }
+                else{
+                    alert("UNDERFLOW");
+                }
+            
+            }
+            
+            if (a.length==0){   
+                document.getElementById("stack").innerHTML="EMPTY STACK";
+                
+            }
+            if (a.length==0){   
+                document.getElementById("top1").innerHTML="EMPTY STACK";
+                document.getElementById("size").innerHTML="EMPTY STACK";
+                
+            }            
+            
+           
+
+            
+            
+
+        </script>
+    </body>
+</html>

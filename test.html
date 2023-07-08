@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stack Data Structure</title>
+</head>
+<body>
+  <h1>Stack Data Structure</h1>
+  <button onclick="pushItem()">Push</button>
+  <button onclick="popItem()">Pop</button>
+  <button onclick="displayTop()">Top</button>
+  <button onclick="displayStack()">Display</button>
+  <button onclick="checkEmpty()">Is Empty?</button>
+  <br>
+  
+ 
+  <div id="stackItems"></div>
+  <br>
+  <div id="topItem"></div>
+  <div id="isEmptyResult"></div>
+
+  <script>
+    // Stack implementation using JavaScript array
+    var stack = [];
+
+    function pushItem() {
+      var item = document.getElementById("itemInput").value;
+      stack.push(item);
+      document.getElementById("itemInput").value = '';
+    }
+
+    function popItem() {
+      if (stack.length === 0) {
+        alert("Stack is empty!");
+        return;
+      }
+      var poppedItem = stack.pop();
+      alert("Popped item: " + poppedItem);
+    }
+
+    function displayTop() {
+      if (stack.length === 0) {
+        alert("Stack is empty!");
+        return;
+      }
+      var topItem = stack[stack.length - 1];
+      alert("Top item: " + topItem);
+    }
+
+    function displayStack() {
+      var stackItems = document.getElementById("stackItems");
+      stackItems.innerHTML = "";
+
+      for (var i = stack.length - 1; i >= 0; i--) {
+        var item = stack[i];
+        var itemElement = document.createElement("div");
+        itemElement.innerHTML = item;
+        stackItems.appendChild(itemElement);
+      }
+    }
+
+    function checkEmpty() {
+      var isEmpty = stack.length === 0;
+      var isEmptyResult = document.getElementById("isEmptyResult");
+      isEmptyResult.innerHTML = "Is Empty? " + isEmpty;
+    }
+  </script>
+</body>
+</html>

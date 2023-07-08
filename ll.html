@@ -1,0 +1,329 @@
+<html>
+    <head>
+        <style>
+            fieldset{
+                width:50%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align:center;
+            }
+            .left{
+                float:left;
+                width:20%;
+                height:100px;
+                text-align:center;
+                margin-left:100px;
+            }
+            .right{
+                float:right;
+                width:20%;
+                margin-right: 50px;
+                height:100px;
+                text-align:center;
+                margin-right:100px;
+            }
+            .menuBar{
+        background-color: rgba(0, 0, 0, 0.378);
+        overflow: hidden;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0;
+        left: 0; /* Position the navbar at the top of the page */
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 18px;
+        padding-bottom: 10px ;
+        color:white;
+    }
+    .menuBar a{
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+    .title{
+        padding: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+    }
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .hover-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 50px;
+        bottom: 0;
+        left: 0;
+        opacity: .2;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+        </style>
+    </head>
+
+    <body style="background-color: antiquewhite;">
+        <div class="menuBar">
+            <a class = "title">Data structure's project</a>
+            <a class="hover-underline-animation" href="index.html">Home</a>
+            <a class="hover-underline-animation" href="array_and_tree.html">Array and Tree</a>
+            <a class="hover-underline-animation" href = "queue.html">Queue</a>
+            <a class="hover-underline-animation" href = "graph.html">Graph</a>
+            <a class="hover-underline-animation" href="stack.html">Stack</a>
+            <a class="hover-underline-animation" href = "linked list.html">Linked List</a>
+            <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+            <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+            <a class="hover-underline-animation" href = "about.html">About</a>
+        </div><br><br><br><br><br>
+        <fieldset>
+            <legend>LINKED LIST</legend>
+            <p id="lldisplay"></p>
+        </fieldset>
+        <fieldset>
+            <legend>OPERATIONS</legend>
+            ENTER THE VALUE TO BE ADDED:<input type="text" name="val" id="val"><br><br>
+            <button type="submit" onclick="eqf()">INSERT FRONT</button>
+            <button type="submit" onclick="eqr()">INSERT REAR</button>
+            <button type="submit" onclick="df()">DELETE FRONT</button>
+            <button type="submit" onclick="dr()">DELETE REAR</button>
+           
+        </fieldset>
+        <div class="container">
+            <div class="left"><fieldset><legend>HEAD</legend><p id="head"></p></fieldset></div>
+            <div class="right"><fieldset><legend>TAIL</legend><p id="tail"></p></fieldset></div>
+            
+        </div>
+        <fieldset><legend>FIND AN ELEMENT</legend>
+            Enter the element to be found:<input type="text" id="find"><br><br>
+            <button type="submit" onclick="find()">FIND</button><br><br>
+            <fieldset id="in"><p id="in"></p></fieldset>
+            
+        </fieldset>
+        <script>
+            let a=[];
+            let ll=[];
+            let col=2;let p=0; let c="";
+
+            if (ll.length==0){
+                document.getElementById("lldisplay").innerHTML="EMPTY LINKED LIST";
+                document.getElementById("head").innerHTML="EMPTY LINKED LIST";
+                document.getElementById("tail").innerHTML="EMPTY LINKED LIST";
+                
+            }
+
+            function find(){
+                
+                let y=document.getElementById("find").value;
+                
+                let chr="";
+                let count=0;
+                for (i=0;i<ll.length;i++){
+                    if (y==ll[i][0]){
+                        chr+=i+" "; 
+                        count++;
+                }
+                
+                }
+                if (count==0){
+                    document.getElementById("in").innerHTML="ELEMENT NOT FOUND";
+
+                }
+                else{
+                    document.getElementById("in").innerHTML="Elements found at postion: "+chr;
+                }
+            }
+
+
+
+
+
+
+            function eqr(){
+                
+                let x=document.getElementById("val").value;
+                
+                if (x==""){
+                    alert("PLEASE ENTER VALUE");
+                }
+                else{
+                    ll2=node(x);
+                    
+                }
+                ll[p]=[];
+               
+                ll[p][0]=ll2[0][0];
+                ll[p][1]="NULL";
+                if (p!=0){
+                    for (i=0;i<ll.length-1;i++){
+                        ll[i][1]=Math.floor((Math.random() * 100000000) + 1); //updation of address
+                    }
+                }
+
+                
+                   
+                  
+                
+                
+                
+                
+                
+                c="";
+                for (i=0;i<ll.length;i++){
+                    c=c+"["+ll[i]+"]→→";
+                    
+                }
+                
+                document.getElementById("lldisplay").innerHTML=c;
+                
+                document.getElementById("head").innerHTML=ll[0][0];
+                document.getElementById("tail").innerHTML=ll[ll.length-1][0];
+                p++;
+                
+            }
+            function eqf(){
+                let x=document.getElementById("val").value;
+                if (x==""){
+                    alert("PLEASE ENTER VALUE");
+                }
+                else{
+               
+                
+                
+                ll2=node(x);
+                for (i=1;i<=ll.length;i++){ 
+                    ll2[i]=[];
+                    for (j=0;j<2;j++){
+                        ll2[i][j]=ll[i-1][j];
+                    }
+                }
+                ll=ll2;
+
+                c="";
+                for (i=0;i<ll.length;i++){
+                    c=c+"["+ll[i]+"]→→";
+                    
+                }
+                p++;
+                document.getElementById("lldisplay").innerHTML=c;
+                document.getElementById("head").innerHTML=ll[0][0];
+                document.getElementById("tail").innerHTML=ll[ll.length-1][0];
+            }
+
+
+            }
+            function df(){
+                let ll2=[];// for updating the new ll
+                alert("ELEMENT DELETED:  "+ll[0]);
+                
+                for (i=1;i<ll.length;i++){
+                    ll2[i-1]=[];
+                    for (j=0;j<2;j++){
+                        ll2[i-1][j]=ll[i][j];
+                    }
+                }
+                
+                ll=ll2;
+                c="";
+                for (i=0;i<ll.length;i++){
+                    c=c+"["+ll[i]+"]→→";
+                    
+                }
+                document.getElementById("lldisplay").innerHTML=c;
+                if (ll.length==0){
+                    document.getElementById("head").innerHTML="EMPTY LINKED LIST";
+                    document.getElementById("tail").innerHTML="EMPTY LINKED LIST";
+
+                }
+                else{
+                document.getElementById("head").innerHTML=ll[0][0];
+                document.getElementById("tail").innerHTML=ll[ll.length-1][0];}}
+
+            function dr(){
+                ll2=[];
+                
+                for (i=0;i<ll.length-1;i++){
+                    ll2[i]=[];
+                    for (j=0;j<2;j++){
+                        
+                        ll2[i][j]=ll[i][j];
+                        
+                    }
+                    ll2[ll2.length-1][1]="NULL";
+                }
+                
+                ll=ll2;
+                c="";
+                for (i=0;i<ll.length;i++){
+                    c=c+"["+ll[i]+"]→→";
+                    
+                }
+                document.getElementById("lldisplay").innerHTML=c;
+                if (ll.length==0){
+                    document.getElementById("head").innerHTML="EMPTY LINKED LIST";
+                    document.getElementById("tail").innerHTML="EMPTY LINKED LIST";
+
+                }
+                else{
+                document.getElementById("head").innerHTML=ll[0][0];
+                document.getElementById("tail").innerHTML=ll[ll.length-1][0];}
+
+
+            }
+            function node(x){
+                let ll1=[]; //new array for operation
+                
+                ll1[0]=[];
+                ll1[0][0]=x;
+                if (ll.length==0){
+                    ll1[0][1]="NULL"
+                }
+                else{
+                ll1[0][1]=Math.floor((Math.random() * 100000000) + 1); }
+                //fine till here
+                
+                
+                return ll1;
+
+            }
+            
+        </script>
+    </body>
+</html>

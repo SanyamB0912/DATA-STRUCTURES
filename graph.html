@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Graphs and Their Types</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f7f7f7;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      color: #555;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .graph-type {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .graph-type h3 {
+      color: #333;
+      background-color: #f2f2f2;
+      padding: 8px;
+      border-radius: 5px;
+      margin-top: 0;
+    }
+    img{
+      width: 481px; 
+      height: 362px;
+    }
+    .menuBar{
+        background-color: rgba(0, 0, 0, 0.378);
+        overflow: hidden;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0;
+        left: 0; /* Position the navbar at the top of the page */
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 18px;
+        padding-bottom: 10px ;
+        color:white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .menuBar a{
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+    .title{
+        padding: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+    }
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .hover-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+        
+    .hover-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 50px;
+        bottom: 0;
+        left: 0;
+        opacity: .2;
+        background-color: #0087ca;
+        transform-origin: right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    .hover-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+  </style>
+</head>
+<body>
+  
+  
+  <div class="menuBar">
+    <a class = "title">Data structure's project</a>
+    <a class="hover-underline-animation" href="index.html">Home</a>
+    <a class="hover-underline-animation" href="array_and_tree.html">Array and Tree</a>
+    <a class="hover-underline-animation" href = "queue.html">Queue</a>
+    <a class="hover-underline-animation" href = "graph.html">Graph</a>
+    <a class="hover-underline-animation" href="stack.html">Stack</a>
+    <a class="hover-underline-animation" href = "linked list.html">Linked List</a>
+    <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+    <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+    <a class="hover-underline-animation" href = "about.html">About</a>
+</div>
+<br><br><br><br><br><br><br>
+  <h1>Graphs and Their Types</h1>
+  
+  <h2>Introduction to Graphs</h2>
+  <p>A graph is a data structure that represents a set of objects where some pairs of objects are connected by links. These objects are called vertices or nodes, and the links connecting them are called edges. Graphs are widely used to represent relationships between different entities and are employed in various fields such as computer science, mathematics, social networks, and transportation networks.</p>
+  
+  <h2>Types of Graphs</h2>
+  
+  <div class="graph-type">
+    <h3 style="background-color: #ff9999;">1. Undirected Graph</h3>
+    <img src="undirected.webp" alt="Undirected Graph" style="width: 481px; height: 362px;">
+    <p>An undirected graph is a graph where edges have no direction. The edges represent symmetric relationships, and traversal is possible in both directions between any two vertices.</p>
+    
+    <p><strong>Explanation:</strong></p>
+    <p>In an undirected graph, the edges between vertices do not have any direction associated with them. They represent a symmetric relationship, meaning that traversal is possible in both directions. For example, if there is an edge between vertex A and vertex B, it implies that you can move from A to B or from B to A.</p>
+  </div>
+  
+  <div class="graph-type">
+    <h3 style="background-color: #99ccff;">2. Directed Graph (Digraph)</h3>
+    <img src="uni.png" alt="Undirected Graph" style="width: 481px; height: 362px;">
+    <p>A directed graph is a graph where edges have a direction. The edges represent asymmetric relationships, and traversal is only possible in the direction specified by the edges.</p>
+    
+    <p><strong>Explanation:</strong></p>
+    <p>In a directed graph, the edges between vertices have a specific direction associated with them. They represent an asymmetric relationship, meaning that traversal is only possible in the direction specified by the edges. For example, if there is an edge from vertex A to vertex B, it implies that you can move from A to B but not from B to A.</p>
+  </div>
+  
+  <div class="graph-type">
+    <h3 style="background-color: #ffff99;">3. Weighted Graph</h3>
+    <img src="weighted.png" alt="Undirected Graph">
+    <p>A weighted graph is a graph where edges have weights or values associated with them. These weights can represent various quantities such as distances, costs, or capacities, depending onthe application.</p>
+    
+    <p><strong>Explanation:</strong></p>
+    <p>In a weighted graph, each edge has a weight or value associated with it. These weights can represent different quantities depending on the context of the graph. For example, in a graph representing a transportation network, the weights could represent distances between cities. In a graph representing a financial network, the weights could represent the cost of transactions between nodes. Weighted graphs are used when additional information or measurements need to be considered along with the connectivity between vertices.</p>
+  </div>
+  
+  <div class="graph-type">
+    <h3 style="background-color: #cc99ff;">4. Cyclic Graph</h3>
+    <img src="cyclic.png" alt="Undirected Graph">
+    <p>A cyclic graph is a graph that contains at least one cycle, which is a path that starts and ends at the same vertex.</p>
+    
+    <p><strong>Explanation:</strong></p>
+    <p>In a cyclic graph, there exists at least one cycle, which is a path that starts and ends at the same vertex. A cycle represents a closed loop within the graph where you can traverse from one vertex back to itself by following a sequence of edges. Cyclic graphs can have multiple cycles and are characterized by the presence of these closed loops.</p>
+  </div>
+  
+  <div class="graph-type">
+    <h3 style="background-color: #99ff99;">5. Acyclic Graph</h3>
+    <img src="Directed-Acyclic-Graph.jpg" alt="Undirected Graph">
+    <p>An acyclic graph is a graph that does not contain any cycles.</p>
+    
+    <p><strong>Explanation:</strong></p>
+    <p>In an acyclic graph, there are no cycles present. This means that there are no paths that start and end at the same vertex. Acyclic graphs are also known as directed acyclic graphs (DAGs) and find applications in areas such as task scheduling, dependency management, and directed acyclic word graphs (DAWGs).</p>
+  </div>
+  
+  <div class="graph-type">
+    <h3 style="background-color: #ffcc99;">6. Bipartite Graph</h3>
+    <img src="bipartite.png" alt="Undirected Graph">
+    <p>A bipartite graph is a graph whose vertices can be divided into two disjoint sets, such that there are no edges between vertices within the same set.</p>
+    
+    <p><strong>Explanation:</strong></p>
+    <p>In a bipartite graph, the vertices can be divided into two separate sets such that there are no edges connecting vertices within the same set. In other words, the graph can be partitioned into two independent sets, and all the edges connect vertices from one set to the other. Bipartite graphs find applications in various fields such as scheduling problems, matching algorithms, and graph coloring.</p>
+  </div>
+  
+  <div class="graph-type">
+    <h3 style="background-color: #99ffff;">7. Complete Graph</h3>
+    <img src="complete.png" alt="Undirected Graph">
+    <p>A complete graph is a graph where each pair of distinct vertices is connected by a unique edge.</p>
+    
+    <p><strong>Explanation:</strong></p>
+    <p>In a complete graph, every pair of distinct vertices is connected by a unique edge. This means that there is an edge between every possible pair of vertices in the graph. Complete graphs have the maximum number of edges for a given number of vertices and are denoted by the symbol "K" followed by the number of vertices. For example, K5 represents a complete graph with 5 vertices.</p>
+  </div>
+  
+  <div class="graph-type">
+    <h3 style="background-color: #ff99cc;">8. Connected Graph</h3>
+    <img src="connected.png" alt="Undirected Graph">
+    <p>A connected graph is a graph where there is a path between every pair of vertices.</p>
+    
+    <p><strong>Explanation:</strong></p>
+    <p>In a connected graph, there exists a path between every pair of vertices. This means that you can start at any vertex and reach any other vertex in the graph by following a sequence of edges. Connected graphs are characterized by the absence of isolated vertices or disconnected components. They represent a unified structure where every vertex is reachable from every other vertex.</p>
+  </div>
+  
+  <div class="graph-type">
+    <h3 style="background-color: #ccff99;">9. Disconnected Graph</h3>
+    <img src="disconnected.jpeg" alt="Undirected Graph">
+    <p>A disconnected graph is a graph that contains two or more connected components, where there is no path between vertices in different components.</p>
+    
+    <p><strong>Explanation:</strong></p>
+    <p>In a disconnected graph, there are two or more connected components, which are subgraphs where there is no path between vertices in different components. Each connected component represents a separate cluster of vertices that are connected internally but not externally to vertices in other components. Disconnected graphs consist of isolated subgraphs that are not connected to each other.</p>
+  </div>
+</body>
+</html>
+
+
+
+

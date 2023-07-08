@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+}
+
+#quiz-container, #result-container {
+    margin: 20px auto;
+    padding: 20px;
+    width: 500px;
+    border: 1px solid #ccc;
+}
+
+#result-container {
+    display: none;
+}
+
+button {
+    margin-top: 10px;
+}

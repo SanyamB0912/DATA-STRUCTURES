@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Circular Queue</title>
+  <style>
+    legend{
+      text-align: center;
+    }
+    fieldset{
+      width:50%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align:center;
+    }
+    .left{
+      float:left;
+      width:20%;
+      height:100px;
+      text-align:center;
+    }
+    .right{
+      float:right;
+      width:20%;
+      height:100px;
+      text-align:center;
+    }
+    #queue-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+    }
+
+    .queue {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #000;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .queue-item {
+      border: 1px solid #000;
+      padding: 5px;
+      margin: 5px;
+    }
+    .menuBar{
+                background-color: rgba(0, 0, 0, 0.378);
+                overflow: hidden;
+                position: fixed; /* Set the navbar to fixed position */
+                top: 0;
+                left: 0; /* Position the navbar at the top of the page */
+                width: 100%;
+                padding-left: 10px;
+                padding-top: 18px;
+                padding-bottom: 10px ;
+                color:white;
+            }
+            .menuBar a{
+                float: left;
+                color: black;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+                font-size: 25px;
+            }
+            .title{
+                padding: 20px;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 25px;
+            }
+            .hover-underline-animation {
+                display: inline-block;
+                position: relative;
+                color: #0087ca;
+            }
+
+                
+            .hover-underline-animation:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #0087ca;
+                transform-origin: right;
+                transition: transform 0.25s ease-out;
+            }
+            
+            .hover-underline-animation:hover:after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            .hover-animation {
+                display: inline-block;
+                position: relative;
+                color: #0087ca;
+            }
+
+                
+            .hover-animation:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 50px;
+                bottom: 0;
+                left: 0;
+                opacity: .2;
+                background-color: #0087ca;
+                transform-origin: right;
+                transition: transform 0.25s ease-out;
+            }
+            
+            .hover-animation:hover:after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        </style>
+  </style>
+</head>
+<body>
+  <div class="menuBar">
+    <a class = "title">Data structure's project</a>
+    <a class="hover-underline-animation" href="index.html">Home</a>
+    <a class="hover-underline-animation" href="array.html">Array</a>
+    <a class="hover-underline-animation" href = "queue.html">Queue</a>
+    <a class="hover-underline-animation" href="stack.html">Stack</a>
+    <a class="hover-underline-animation" href = "ll.html">Linked List</a>
+    <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+    <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+    <a class="hover-underline-animation" href = "about.html">About</a>
+  </div>
+  <br><br><br><br><br>
+  
+
+  <fieldset>
+    <legend>Circular Queue</legend>
+
+    <div id="queue-container">
+      <div id="queue"></div>
+    </div>
+  </fieldset><br><br>
+
+  <fieldset>
+      <h2>Circular Queue</h2>
+      Enter the input to be added: <input type="text" id="input-item" placeholder="Enter an item">
+      <button onclick="enqueue()">Enqueue</button>
+      <button onclick="dequeue()">Dequeue</button>
+  </fieldset>
+
+  <div class="location">
+    <div class="left">
+        <fieldset><legend>FRONT</legend>
+        <p id="front"></p></fieldset>
+    </div>
+    <div class="right">
+        <fieldset><legend>REAR</legend>
+        <p id="rear"></p></fieldset>
+    </div>
+  </div>
+
+  <script>
+    const queueElement = document.getElementById('queue');
+    const inputItemElement = document.getElementById('input-item');
+
+    const maxSize = 5; // Maximum number of elements in the circular queue
+    let queue = new Array(maxSize);
+    let front = -1;
+    let rear = -1;
+
+    function updateQueueDisplay() {
+      document.getElementById("queue").innerHTML="EMPTY QUEUE";
+      document.getElementById("front").innerHTML= queue[front];
+      document.getElementById("rear").innerHTML= queue[rear];
+      queueElement.innerHTML = queue
+        .filter(item => item !== undefined)
+        .map(item => `<p class="queue">${item}</p>`)
+        .join('');
+    }
+
+    function isFull() {
+      return (front === 0 && rear === maxSize - 1) || (front === rear + 1);
+    }
+
+    function isEmpty() {
+      document.getElementById("queue").innerHTML="EMPTY QUEUE";
+      document.getElementById("front").innerHTML="EMPTY QUEUE";
+      document.getElementById("rear").innerHTML="EMPTY QUEUE";
+      return front === -1;
+
+    }
+
+    function enqueue() {
+      if (isFull()) {
+        alert('Queue is full!');
+        return;
+      }
+
+      const item = inputItemElement.value;
+      if (item) {
+        if (front === -1) {
+          front = 0;
+          rear = 0;
+        } else if (rear === maxSize - 1) {
+          rear = 0;
+        } else {
+          rear++;
+        }
+      
+        queue[rear] = item;
+        updateQueueDisplay();
+        inputItemElement.value = '';
+      }
+    }
+
+    function dequeue() {
+      if (isEmpty()) {
+        alert('Queue is empty!');
+        return;
+      }
+
+      const removedItem = queue[front];
+      queue[front] = undefined;
+
+      if (front === rear) {
+        front = -1;
+        rear = -1;
+      } else if (front === maxSize - 1) {
+        front = 0;
+      } else {
+        front++;
+      }
+
+      alert(`Dequeued item: ${removedItem}`);
+      updateQueueDisplay();
+    }
+
+  </script>
+</body>
+</html>

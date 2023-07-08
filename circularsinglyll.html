@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .heading {
+      text-align: center;
+    }
+
+    img {
+      height: 195px;
+      width: 429px;
+    }
+
+    body {
+      background-color: antiquewhite;
+    }
+
+    .menuBar {
+      background-color: rgba(0, 0, 0, 0.378);
+      overflow: hidden;
+      position: fixed;
+      /* Set the navbar to fixed position */
+      top: 0;
+      left: 0;
+      /* Position the navbar at the top of the page */
+      width: 100%;
+      padding-left: 10px;
+      padding-top: 18px;
+      padding-bottom: 10px;
+      color: white;
+    }
+
+    .menuBar a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+    .title {
+      padding: 20px;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 25px;
+    }
+
+    .hover-underline-animation {
+      display: inline-block;
+      position: relative;
+      color: #0087ca;
+    }
+
+
+    .hover-underline-animation:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #0087ca;
+      transform-origin: right;
+      transition: transform 0.25s ease-out;
+    }
+
+    .hover-underline-animation:hover:after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .hover-animation {
+      display: inline-block;
+      position: relative;
+      color: #0087ca;
+    }
+
+
+    .hover-animation:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 50px;
+      bottom: 0;
+      left: 0;
+      opacity: .2;
+      background-color: #0087ca;
+      transform-origin: right;
+      transition: transform 0.25s ease-out;
+    }
+
+    .hover-animation:hover:after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menuBar">
+    <a class="title">Data structure's project</a>
+    <a class="hover-underline-animation" href="index.html">Home</a>
+    <a class="hover-underline-animation" href="array_and_tree.html">Array</a>
+    <a class="hover-underline-animation" href="queue.html">Queue</a>
+    <a class="hover-underline-animation" href="graph.html">Graph</a>
+    <a class="hover-underline-animation" href="stack.html">Stack</a>
+    <a class="hover-underline-animation" href="linked list.html">Linked List</a>
+    <a class="hover-underline-animation" href="Quiz.html">Quiz</a>
+    <a class="hover-underline-animation" href="table.html">Stack vs Queue</a>
+    <a class="hover-underline-animation" href="about.html">About</a>
+  </div><br><br><br><br>
+  <h1 class="heading">Circular Singly Linked List</h1>
+  <p>A circular singly linked list is a variation of a linked list where the last node points back to the first node,
+    forming a circular structure. Each node contains a value and a link to the next node.</p>
+  <p>In a circular singly linked list, each node has a link that points to the next node in the sequence. The last
+    node's link points back to the first node, creating a loop. This loop allows for circular traversal from any node to
+    any other node in the list.</p>
+  <p>There are two common variations of circular singly linked lists:</p>
+  <ol>
+    <li><strong>Sorted Circular Singly Linked List:</strong> The nodes in the list are sorted in ascending or descending
+      order based on their values.</li>
+    <li><strong>Unsorted Circular Singly Linked List:</strong> The nodes in the list are not necessarily sorted, and new
+      nodes can be inserted anywhere in the list.</li>
+  </ol>
+  <h2>Example</h2>
+  <p>Here's an example of a sorted circular singly linked list representation:</p>
+  <img align="center" src="circularlsinglyll.png" alt=""><br><br>
+  <p>Circular singly linked lists are useful in scenarios where circular traversal is required or when we want to
+    efficiently iterate through all the elements of the list. Sorted circular singly linked lists offer advantages for
+    operations that require ordered access to elements.</p>
+</body>
+
+</html>

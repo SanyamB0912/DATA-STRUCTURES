@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY</title>
+    <style>
+        body{
+            background-color:lightcyan;
+        }
+        .heading{
+            text-align: center;
+        }
+        img {
+            height: 195px;
+            width: 429px;
+        }
+        .slide-up {
+  
+        overflow:hidden;
+        }
+        .slide-up p {
+        animation: 2s slide-up;
+        margin-top:0%;
+        }
+        .menuBar{
+        background-color: rgba(0, 0, 0, 0.378);
+        overflow: hidden;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0;
+        left: 0; /* Position the navbar at the top of the page */
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 18px;
+        padding-bottom: 10px ;
+        color:white;
+        }
+        .menuBar a{
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 25px;
+        }
+        .title{
+            padding: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #0087ca;
+        }
+
+            
+        .hover-underline-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+            transform-origin: right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        .hover-underline-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .hover-animation {
+            display: inline-block;
+            position: relative;
+            color: #0087ca;
+        }
+
+            
+        .hover-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 50px;
+            bottom: 0;
+            left: 0;
+            opacity: .2;
+            background-color: #0087ca;
+            transform-origin: right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        .hover-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    </style>
+<body>
+    <div class="menuBar">
+        <a class = "title">Data structure's project</a>
+        <a class="hover-underline-animation" href="index.html">Home</a>
+        <a class="hover-underline-animation" href="array_and_tree.html">Array and Tree</a>
+        <a class="hover-underline-animation" href = "queue.html">Queue</a>
+        <a class="hover-underline-animation" href = "graph.html">Graph</a>
+        <a class="hover-underline-animation" href="stack.html">Stack</a>
+        <a class="hover-underline-animation" href = "linked list.html">Linked List</a>
+        <a class="hover-underline-animation" href = "Quiz.html">Quiz</a>
+        <a class="hover-underline-animation" href = "table.html">Stack vs Queue</a>
+        <a class="hover-underline-animation" href = "about.html">About</a>
+    </div>
+    <br><br><br><br>
+    <div style="border:solid; border-color: black;">
+        <h1 class="heading">Arrays</h1>
+        <p>An array is a data structure used to store multiple values of the same type in a single variable. It provides a way to organize and access related data efficiently.</p>
+        <p>An array is a contiguous block of memory divided into multiple slots or elements. Each element within the array can hold a value of the same data type, such as numbers, strings, or objects.</p>
+        <img align="right" src="array.png" alt=""> <br><br>
+        <p>The elements in an array are accessed using an index. The index represents the position of an element within the array and starts at 0 for the first element. By specifying the index, you can read or modify the value of a particular element.</p>
+        <p>In some programming languages, arrays have a fixed size, meaning you need to specify the number of elements it can hold in advance. In other languages, like JavaScript, arrays can dynamically grow and shrink as needed.</p>
+        <h2>Example</h2>
+        <p>Here's an example of how an array can be used to store a list of numbers:</p>
+        <pre>
+            int[] numbers = new int[5]; // Declare an array of integers with a size of 5
+            
+            numbers[0] = 10; // Assign a value to the first element
+            numbers[1] = 20; // Assign a value to the second element
+            numbers[2] = 30; // Assign a value to the third element
+            numbers[3] = 40; // Assign a value to the fourth element
+            numbers[4] = 50; // Assign a value to the fifth element
+        </pre>
+        <p>In this example, we declared an array of integers called "numbers" with a size of 5. The index starts from 0, so the first element is accessed using `numbers[0]`, the second element with `numbers[1]`, and so on. We assigned values to each element of the array.</p>
+        <p>Arrays offer various operations to manipulate the data they store. Some common operations include adding or removing elements, finding the length of the array, sorting the elements, and searching for specific values.</p>
+        <h2>Conclusion</h2>
+        <p>Arrays are a fundamental concept in programming. They provide a powerful way to store and manage collections of data. Understanding arrays and their operations is crucial for solving complex programming problems efficiently. By utilizing arrays, you can organize related data, iterate over elements, and perform various operations on the group of values, making arrays an essential tool in any programmer's toolkit.</p>
+        <p>For a live simulation click <a href="array.html">this</a></p>
+    </div>
+
+    <br><br><br>
+    
+    <div style="border:solid; border-color: black;">
+        <h1 class="heading">Tree</h1>
+        <p>A tree is a hierarchical data structure that represents a collection of elements. It consists of nodes connected by edges, where each node can have zero or more child nodes.</p>
+        <p>In a tree, there is a special node called the root, which is the topmost node and has no parent. The nodes below the root are called child nodes, and each child node can have its own child nodes, forming a hierarchical structure.</p>
+        <p>Each node in a tree can have at most one parent node, except for the root node, which has no parent. The nodes that have the same parent are called siblings. Nodes that have no child nodes are called leaf nodes, while nodes with at least one child node are called internal nodes.</p>
+        <h2>Properties of Trees</h2>
+        <ul>
+        <li><strong>Root:</strong> The topmost node of the tree.</li>
+        <li><strong>Child:</strong> A node directly connected to another node when moving away from the root.</li>
+        <li><strong>Parent:</strong> A node directly connected to another node when moving towards the root.</li>
+        <li><strong>Sibling:</strong> Nodes that share the same parent.</li>
+        <li><strong>Leaf:</strong> Nodes that have no child nodes.</li>
+        <li><strong>Internal Node:</strong> Nodes that have at least one child node.</li>
+        <li><strong>Depth:</strong> The number of edges from the root to a specific node.</li>
+        <li><strong>Height:</strong> The maximum depth of any node in the tree.</li>
+        </ul>
+        <h2>Example</h2>
+        <p>Here's an example of a tree representing a file system:</p>
+        <img align="right" src="Tree.png" alt=""><br><br>
+        <p>In this example, the root node represents the main folder, and it has three child nodes: two files and one folder. The folder node, in turn, has three child nodes: two files and another folder.</p>
+        <p>Trees are commonly used to represent hierarchical relationships and recursive structures. They provide efficient ways to organize and access data, making them useful in various applications such as file systems, organizational charts, decision-making processes, and data organization in databases.</p>
+        <h2>Conclusion</h2>
+        <p>Trees are a fundamental data structure in computer science. They allow us to represent and manage hierarchical relationships between elements. Understanding trees and their properties, such as the root, nodes, edges, and the hierarchy they create, is crucial for solving problems that involve organizing and accessing structured data efficiently.</p>
+    </div>
+    
+</body>
+</html>
+

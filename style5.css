@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #252525;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color:azure;
+  }
+  
+  .deque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .deque-visuals {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid azure;
+    padding: 10px;
+    width: 300px;
+    justify-content: space-between;
+  }
+  
+  #deque-items {
+    display: flex;
+  }
+  
+  #deque-items > div {
+    border: 1px solid azure;
+    padding: 5px;
+    margin: 0 3px;
+  }
+  
+  #deque-front,
+  #deque-rear {
+    font-weight: bold;
+  }
+  
+  .deque-operations {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #input-value {
+    padding: 5px;
+  }
+  
+  button {
+    padding: 5px 10px;
+  }
+  
