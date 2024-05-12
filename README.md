@@ -1,2 +1,2 @@
 # DATA-STRUCTURES
-UI code for simulation of data structures, CSS can be improved
+Website for linear data structures simulation using HTML,CSS and JavaScript.
